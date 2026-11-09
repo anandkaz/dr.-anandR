@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Anand R | Professor of Computer Science</title>
+    <meta name="description" content="Professor Anand R - Expert in Machine Learning, Healthcare Informatics, Telemedicine, and Data Mining with over 28 years of academic experience.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0d47a1;
+            --primary-light: #1565c0;
+            --accent: #00acc1;
+            --dark: #0a1929;
+            --text: #1e293b;
+            --text-light: #475569;
+            --bg: #f8fafc;
+            --white: #ffffff;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        nav .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 4rem;
+            background: linear-gradient(135deg, #0d47a1 0%, #1565c0 50%, #0a1929 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></svg>');
+            background-size: 200px;
+            opacity: 0.5;
+        }
+
+        .hero .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-content .title {
+            font-size: 1.5rem;
+            color: #90caf9;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero-content p {
+            font-size: 1.125rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 1.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0097a7;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid rgba(255,255,255,0.3);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* About */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 1.05rem;
+            color: var(--text-light);
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+
+        .highlight-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            border-left: 4px solid var(--accent);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .contact-item .icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0.5rem;
+            width: 15px;
+            height: 15px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--primary);
+        }
+
+        .timeline-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .timeline-card:hover {
+            transform: translateX(5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .timeline-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-card .period {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-card .org {
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .skill-card h4 {
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+        }
+
+        .skill-bar {
+            height: 10px;
+            background: #e2e8f0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 5px;
+            transition: width 1s ease-out;
+        }
+
+        .skill-percent {
+            text-align: right;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .card .meta {
+            color: var(--accent);
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Specializations */
+        .spec-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+
+        .spec-tag {
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+
+        .spec-tag:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Education */
+        .edu-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            box-shadow: var(--card-shadow);
+            border-left: 4px solid var(--primary);
+        }
+
+        .edu-item h3 {
+            color: var(--primary);
+        }
+
+        .edu-item .year {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Contact */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+        }
+
+        .contact-section .section-title,
+        .contact-section .section-subtitle {
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Mobile Nav Toggle */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-image img {
+                width: 250px;
+                height: 250px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Anand <span>R</span></div>
+            <button class="nav-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">☰</button>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Dr. Anand R</h1>
+                <div class="title">Professor of Computer Science</div>
+                <p>Over 28 years of experience advancing healthcare through innovative technological solutions in Machine Learning, Data Mining, Telemedicine, and Hospital Information Systems.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                    <a href="#research" class="btn btn-outline">View Research</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="profile.jpg" alt="Dr. Anand R">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">Dedicated to bridging technology and healthcare</p>
+            
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>A highly motivated and experienced Professor with over 28 years of experience in academia, specializing in Computer Science with a focus on healthcare applications. I possess strong expertise in Data Mining, Machine Learning, Telemedicine, and Hospital Information Systems.</p>
+                    <p>With a proven track record of teaching, research, and guiding PhD scholars, I am committed to advancing healthcare through innovative technological solutions. Currently serving as Senior Lecturer at Coventry University, Kazakhstan, while pursuing a Post Doctoral Fellowship at Multimedia University, Malaysia.</p>
+                    
+                    <div class="highlight-box" style="margin-top: 1.5rem;">
+                        <strong>Current Focus:</strong> AI-Powered Landslide Prediction in Monsoon-Affected Regions under the guidance of Dr. Emerson Raja at Multimedia University, Malaysia.
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 style="margin-bottom: 1rem; color: var(--primary);">Areas of Specialization</h3>
+                    <div class="spec-grid" style="justify-content: flex-start; margin-bottom: 2rem;">
+                        <span class="spec-tag">Machine Learning</span>
+                        <span class="spec-tag">Computer Networks</span>
+                        <span class="spec-tag">Cloud Computing</span>
+                        <span class="spec-tag">Internet of Medical Things (IoMT)</span>
+                        <span class="spec-tag">Data Mining</span>
+                        <span class="spec-tag">MIS</span>
+                        <span class="spec-tag">Mobile Computing</span>
+                        <span class="spec-tag">SQL Server</span>
+                        <span class="spec-tag">Medical Coding</span>
+                        <span class="spec-tag">Telemedicine</span>
+                        <span class="spec-tag">Hospital Information Systems</span>
+                    </div>
+                    
+                    <h3 style="margin-bottom: 1rem; color: var(--primary);">Contact Information</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="icon">📧</div>
+                            <div>
+                                <strong>Email</strong><br>
+                                <a href="mailto:sacanand@yahoo.com">sacanand@yahoo.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon">📱</div>
+                            <div>
+                                <strong>Phone</strong><br>
+                                +91 9944301453 | +91 8903651453
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon">🌍</div>
+                            <div>
+                                <strong>Kazakhstan</strong><br>
+                                +7 778 781 4135
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon">📍</div>
+                            <div>
+                                <strong>Address</strong><br>
+                                314, Raja Illam, Pandian Street, Periavilai,<br>
+                                Kottar PO., Nagercoil 629002
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section style="background: white;">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <p class="section-subtitle">Academic foundation and continuous learning</p>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="edu-item">
+                    <div class="year">Ongoing</div>
+                    <h3>Post Doctoral Fellowship</h3>
+                    <p>Multimedia University, Malaysia<br>
+                    <em>AI-Powered Landslide Prediction in Monsoon-Affected Regions</em><br>
+                    Under the guidance of Dr. Emerson Raja</p>
+                </div>
+                
+                <div class="edu-item">
+                    <div class="year">2015</div>
+                    <h3>Ph.D. in Computer Science</h3>
+                    <p>SCSVMV University, Kanchipuram<br>
+                    <em>A Data Mining Framework for Building Healthcare Information System</em><br>
+                    <a href="http://hdl.handle.net/10603/171784" target="_blank" style="color: var(--accent);">View Thesis →</a></p>
+                </div>
+                
+                <div class="edu-item">
+                    <div class="year">1995</div>
+                    <h3>M.Sc. Computer Science</h3>
+                    <p>Manonmaniam Sundaranar University<br>
+                    First Class - 66%</p>
+                </div>
+                
+                <div class="edu-item">
+                    <div class="year">1990</div>
+                    <h3>B.Sc. Computer Science</h3>
+                    <p>Sivanthi Aditanar College, Madurai Kamaraj University<br>
+                    First Class - 66%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <p class="section-subtitle">Over 28 years in academia and research</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="period">Sep 2025 – Current</div>
+                        <h3>Senior Lecturer</h3>
+                        <div class="org">Coventry University, Kazakhstan — School of Computing</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="period">July 2023 – June 2025</div>
+                        <h3>Professor</h3>
+                        <div class="org">St Joseph's Engineering College, Mangaluru, India<br>Department of Master of Computer Science and Applications (VTU)</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="period">Oct 2022 – May 2023</div>
+                        <h3>Associate Professor and Head</h3>
+                        <div class="org">Acharya Institute of Tech, Bangalore, India<br>Department of Master of Computer Science and Applications (VTU)</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="period">Oct 2020 – Oct 2022</div>
+                        <h3>Associate Professor and IQAC Head</h3>
+                        <div class="org">REVA University, Bangalore, India<br>School of Computer Science and Applications</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="period">Apr 2017 – Oct 2020</div>
+                        <h3>Assistant Professor (III)</h3>
+                        <div class="org">NMAMIT, Nitte, Karnataka, India<br>Department of Master of Computer Applications</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="period">Jan 2016 – Mar 2017</div>
+                        <h3>Temporary Faculty (Assistant Professor)</h3>
+                        <div class="org">NITK, India</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="period">Jan 2009 – Feb 2015</div>
+                        <h3>Senior Lecturer / Programme Coordinator</h3>
+                        <div class="org">Middle East College, Oman<br>IT for Health / Exam Coordinator</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="period">Feb 2007 – Jan 2009</div>
+                        <h3>Selection Grade Lecturer</h3>
+                        <div class="org">Manipal University, Manipal, Karnataka, India</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="period">Aug 2004 – Dec 2006</div>
+                        <h3>Lecturer</h3>
+                        <div class="org">ICFAI, India</div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="period">Feb 1996 – Aug 2004</div>
+                        <h3>Lecturer</h3>
+                        <div class="org">Sivanthi Aditanar College, India</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <p class="section-subtitle">Core competencies in technology and healthcare informatics</p>
+            
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h4>Machine Learning</h4>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
+                    <div class="skill-percent">90%</div>
+                </div>
+                <div class="skill-card">
+                    <h4>IoT</h4>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 80%;"></div></div>
+                    <div class="skill-percent">80%</div>
+                </div>
+                <div class="skill-card">
+                    <h4>Healthcare Informatics</h4>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 75%;"></div></div>
+                    <div class="skill-percent">75%</div>
+                </div>
+                <div class="skill-card">
+                    <h4>Cloud Computing</h4>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 75%;"></div></div>
+                    <div class="skill-percent">75%</div>
+                </div>
+                <div class="skill-card">
+                    <h4>Data Science</h4>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 50%;"></div></div>
+                    <div class="skill-percent">50%</div>
+                </div>
+                <div class="skill-card">
+                    <h4>DBMS</h4>
+                    <div class="skill-bar"><div class="skill-fill" style="width: 35%;"></div></div>
+                    <div class="skill-percent">35%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research & Publications -->
+    <section id="research">
+        <div class="container">
+            <h2 class="section-title">Research & Publications</h2>
+            <p class="section-subtitle">Contributions to healthcare technology and machine learning</p>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="meta">2025 • Engineered Science</div>
+                    <h3>Global Multi-Crop Yield Prediction Using Scalable Tree-Based Learning Models</h3>
+                    <p>DOI: 10.30919/faf2454</p>
+                </div>
+                
+                <div class="card">
+                    <div class="meta">2025 • Engineered Science</div>
+                    <h3>Optimized Electroencephalogram Preprocessing with Discrete Wavelet Transform and EfficientNet for High-Accuracy Seizure Detection</h3>
+                    <p>DOI: 10.30919/es1899</p>
+                </div>
+                
+                <div class="card">
+                    <div class="meta">2025 • ICRTMDR, Saudi Arabia</div>
+                    <h3>Learning and Artificial Intelligence for Landslide Susceptibility Mapping: A Comprehensive Review</h3>
+                    <p>International Conference on Recent Trends in Multi-Disciplinary Research</p>
+                </div>
+                
+                <div class="card">
+                    <div class="meta">2024 • Multimedia Tools and Applications</div>
+                    <h3>Security establishment using deep convolutional network model in cyber-physical systems</h3>
+                </div>
+                
+                <div class="card">
+                    <div class="meta">2024 • SN Computer Science</div>
+                    <h3>An intellectual fusion classification prototypical for an imbalanced electrocardiogram data</h3>
+                    <p>Volume 4(721)</p>
+                </div>
+                
+                <div class="card">
+                    <div class="meta">2022 • IJCNC</div>
+                    <h3>MAR security: Improved security mechanism for emergency messages of VANET using group key management & cryptography schemes (GKMC)</h3>
+                    <p>International Journal of Computer Networks & Communications, 13(4)</p>
+                </div>
+                
+                <div class="card">
+                    <div class="meta">2020 • Conference</div>
+                    <h3>Clinical Significance of Measles and its Prediction using Data Mining Techniques: A Systematic Review</h3>
+                    <p>With Abhishek S. Rao, Demian Antony D'Mello, Sneha Nayak</p>
+                </div>
+                
+                <div class="card">
+                    <div class="meta">2018</div>
+                    <h3>To design a secure framework for healthcare using security and Internet of Things technologies</h3>
+                    <p>International Journal of Advanced Engineering and Research Development, 5(4)</p>
+                </div>
+            </div>
+            
+            <!-- Career Milestones -->
+            <div style="margin-top: 4rem;">
+                <h3 style="text-align: center; color: var(--primary); margin-bottom: 1.5rem;">Career Milestones</h3>
+                <div class="cards-grid">
+                    <div class="card">
+                        <h3>🔬 Reviewer</h3>
+                        <p>Journal of Medical Internet Research (Q1)</p>
+                    </div>
+                    <div class="card">
+                        <h3>📋 IQAC Coordinator</h3>
+                        <p>REVA University, Bangalore</p>
+                    </div>
+                    <div class="card">
+                        <h3>📜 Patents</h3>
+                        <p>Published five patents including Vital Sign Monitoring System (Granted)</p>
+                    </div>
+                    <div class="card">
+                        <h3>🎤 Conference Organizer</h3>
+                        <p>Organized international conferences and served as resource person</p>
+                    </div>
+                    <div class="card">
+                        <h3>💼 Industry Collaboration</h3>
+                        <p>Team member in data mining projects supported by Philips Healthcare</p>
+                    </div>
+                    <div class="card">
+                        <h3>📚 Program Manager</h3>
+                        <p>IT for Health program — guided over 25 projects</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patents -->
+    <section style="background: white;">
+        <div class="container">
+            <h2 class="section-title">Patents</h2>
+            <p class="section-subtitle">Innovations in healthcare and technology</p>
+            
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Anti-intrusion Device for Computer Network</h3>
+                </div>
+                <div class="card">
+                    <div class="meta">Granted</div>
+                    <h3>Vital Sign Monitoring System</h3>
+                </div>
+                <div class="card">
+                    <h3>A Telehealth Based System for Medical Assistance</h3>
+                </div>
+                <div class="card">
+                    <h3>Farmer with Streamlined Agriculture Process</h3>
+                </div>
+                <div class="card">
+                    <div class="meta">2021</div>
+                    <h3>IoT Enabled Smart Calling Name Bell</h3>
+                </div>
+                <div class="card">
+                    <div class="meta">2025</div>
+                    <h3>Child Usage Restriction Technology for Mobile Devices</h3>
+                </div>
+                <div class="card">
+                    <div class="meta">2026 • Kazakhstan</div>
+                    <h3>Personalized Makeup and Hairstyle Recommendations</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Open to collaborations, speaking engagements, and academic opportunities</p>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>📧 Email</h3>
+                    <p><a href="mailto:sacanand@yahoo.com">sacanand@yahoo.com</a></p>
+                </div>
+                <div class="contact-card">
+                    <h3>📱 Phone (India)</h3>
+                    <p>+91 9944301453<br>+91 8903651453</p>
+                </div>
+                <div class="contact-card">
+                    <h3>🌍 Phone (Kazakhstan)</h3>
+                    <p>+7 778 781 4135</p>
+                </div>
+                <div class="contact-card">
+                    <h3>📍 Location</h3>
+                    <p>Nagercoil, Tamil Nadu, India<br>Currently: Kazakhstan</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <h3 style="margin-bottom: 1rem;">References Available Upon Request</h3>
+                <p style="opacity: 0.9;">Dr. Emerson Raja • Dr. Prakash Kumar • Dr. Srivatsa</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Dr. Anand R. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Professor of Computer Science | Healthcare Informatics | Machine Learning</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.querySelector('nav ul').classList.remove('active');
+                }
+            });
+        });
+
+        // Animate skill bars on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.skill-fill').forEach(bar => {
+                        bar.style.width = bar.style.width;
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.skills-grid').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
