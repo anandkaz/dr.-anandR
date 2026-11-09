@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr. Anand R</title>
+<meta name="description" content="Personal website of Dr. Anand R">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf8f4; --surface:#ffffff; --text:#1d2433; --muted:#5d6678;
+    --accent:#1f6f6b; --accent-soft:#e3f0ee; --line:#e6e1d8;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#12161d; --surface:#1a2029; --text:#eef1f6; --muted:#9aa5b8;
+      --accent:#5cc4bd; --accent-soft:#1c2c2e; --line:#2a323f;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,sans-serif}
+  h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.2;margin:0}
+  a{color:var(--accent)}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  header.nav{position:sticky;top:0;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
+  header.nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+  .brand{font-family:Fraunces,serif;font-weight:700;text-decoration:none;color:var(--text)}
+  nav a{margin-left:18px;text-decoration:none;color:var(--muted);font-size:.95rem}
+  nav a:hover{color:var(--accent)}
+  .hero{padding:72px 0 56px;display:grid;grid-template-columns:1fr 220px;gap:40px;align-items:center}
+  .eyebrow{color:var(--accent);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem}
+  .hero h1{font-size:clamp(2.2rem,6vw,3.4rem);margin:10px 0 14px}
+  .hero p.lead{font-size:1.15rem;color:var(--muted);max-width:52ch;margin:0 0 24px}
+  .btn{display:inline-block;padding:11px 20px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;margin-right:10px}
+  .btn.ghost{background:transparent;color:var(--accent);border:1.5px solid var(--accent)}
+  .avatar{width:220px;height:220px;border-radius:50%;background:var(--accent-soft);border:1px solid var(--line);display:grid;place-items:center;font-family:Fraunces,serif;font-size:4rem;color:var(--accent);overflow:hidden}
+  .avatar img{width:100%;height:100%;object-fit:cover}
+  section{padding:48px 0;border-top:1px solid var(--line)}
+  section h2{font-size:1.7rem;margin-bottom:22px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card h3{font-size:1.1rem;margin-bottom:6px}
+  .card small{color:var(--muted)}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tag{background:var(--accent-soft);color:var(--accent);padding:5px 12px;border-radius:999px;font-size:.9rem;font-weight:500}
+  .timeline .item{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:14px 0;border-bottom:1px dashed var(--line)}
+  .timeline .when{color:var(--muted);font-size:.92rem}
+  ul.plain{margin:0;padding-left:18px}
+  footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem;text-align:center}
+  @media (max-width:700px){
+    .hero{grid-template-columns:1fr;padding-top:40px}
+    .avatar{width:150px;height:150px;font-size:2.8rem;order:-1}
+    .timeline .item{grid-template-columns:1fr;gap:2px}
+    nav a:nth-child(n+4){display:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" id="brandName">Dr. Anand R</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#publications">Work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top" class="wrap">
+
+  <div class="hero">
+    <div>
+      <div class="eyebrow" id="role"></div>
+      <h1 id="name"></h1>
+      <p class="lead" id="tagline"></p>
+      <a class="btn" href="#contact">Get in touch</a>
+      <a class="btn ghost" href="#about">About me</a>
+    </div>
+    <div class="avatar" id="avatar"></div>
+  </div>
+
+  <section id="about">
+    <h2>About</h2>
+    <div id="bio"></div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience &amp; Education</h2>
+    <div class="timeline" id="timeline"></div>
+  </section>
+
+  <section id="expertise">
+    <h2>Areas of Expertise</h2>
+    <div class="tags" id="skills"></div>
+  </section>
+
+  <section id="publications">
+    <h2>Selected Work</h2>
+    <div class="grid" id="work"></div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card" id="contactCard"></div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">&copy; <span id="year"></span> <span id="footName"></span>. All rights reserved.</div>
+</footer>
+
+<script>
+/* ================= EDIT YOUR DETAILS HERE ================= */
+const PROFILE = {
+  name: "Dr. Anand R",
+  role: "Your profession / specialty",                 // e.g. "Consultant Physician", "Research Scientist"
+  tagline: "One or two sentences about what you do and who you help.",
+  photo: "",                                            // e.g. "photo.jpg" (upload the image to the repo). Leave empty to show initials.
+  initials: "AR",
+
+  bio: [
+    "Write a short paragraph introducing yourself: your background, what drives your work, and what you are focused on today.",
+    "Add a second paragraph if you like: your approach, values, or what people can expect when they work with you."
+  ],
+
+  timeline: [
+    { when: "20XX – Present", title: "Current position", place: "Organisation / Institution", note: "One line on your role and responsibilities." },
+    { when: "20XX – 20XX",    title: "Previous position", place: "Organisation / Institution", note: "One line on what you did." },
+    { when: "20XX",           title: "Highest degree (e.g. MD / PhD)", place: "University", note: "" }
+  ],
+
+  skills: ["Expertise one", "Expertise two", "Expertise three", "Expertise four", "Expertise five"],
+
+  work: [
+    { title: "Publication, project or service #1", meta: "Year · Journal / Organisation", text: "A short description.", link: "" },
+    { title: "Publication, project or service #2", meta: "Year · Journal / Organisation", text: "A short description.", link: "" },
+    { title: "Publication, project or service #3", meta: "Year · Journal / Organisation", text: "A short description.", link: "" }
+  ],
+
+  contact: {
+    email: "anandngl2010@gmail.com",
+    phone: "",                                          // optional
+    location: "",                                       // optional, e.g. "City, Country"
+    links: [
+      { label: "GitHub", url: "https://github.com/anandkaz" }
+      // { label: "LinkedIn", url: "https://www.linkedin.com/in/your-id" }
+    ]
+  }
+};
+/* =========================================================== */
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+document.title = PROFILE.name;
+$("brandName").textContent = PROFILE.name;
+$("name").textContent = PROFILE.name;
+$("role").textContent = PROFILE.role;
+$("tagline").textContent = PROFILE.tagline;
+$("footName").textContent = PROFILE.name;
+$("year").textContent = new Date().getFullYear();
+
+$("avatar").innerHTML = PROFILE.photo
+  ? `<img src="${esc(PROFILE.photo)}" alt="Portrait of ${esc(PROFILE.name)}">`
+  : esc(PROFILE.initials);
+
+$("bio").innerHTML = PROFILE.bio.map(p => `<p>${esc(p)}</p>`).join("");
+
+$("timeline").innerHTML = PROFILE.timeline.map(t => `
+  <div class="item">
+    <div class="when">${esc(t.when)}</div>
+    <div><strong>${esc(t.title)}</strong><br><span style="color:var(--muted)">${esc(t.place)}</span>
+    ${t.note ? `<div>${esc(t.note)}</div>` : ""}</div>
+  </div>`).join("");
+
+$("skills").innerHTML = PROFILE.skills.map(s => `<span class="tag">${esc(s)}</span>`).join("");
+
+$("work").innerHTML = PROFILE.work.map(w => `
+  <div class="card">
+    <h3>${esc(w.title)}</h3>
+    <small>${esc(w.meta)}</small>
+    <p>${esc(w.text)}</p>
+    ${w.link ? `<a href="${esc(w.link)}" target="_blank" rel="noopener">View &rarr;</a>` : ""}
+  </div>`).join("");
+
+const c = PROFILE.contact;
+$("contactCard").innerHTML = `
+  <ul class="plain" style="list-style:none;padding:0">
+    ${c.email ? `<li>Email: <a href="mailto:${esc(c.email)}">${esc(c.email)}</a></li>` : ""}
+    ${c.phone ? `<li>Phone: ${esc(c.phone)}</li>` : ""}
+    ${c.location ? `<li>Location: ${esc(c.location)}</li>` : ""}
+    ${c.links.map(l => `<li><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a></li>`).join("")}
+  </ul>`;
+</script>
+</body>
+</html>
